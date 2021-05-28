@@ -1,0 +1,54 @@
+﻿<Window x:Class="DeveloperTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="740" Width="1297">
+    <Grid>
+        <DataGrid VerticalAlignment="Top" Height="554" Margin="10,146,0,0" HorizontalAlignment="Left" Width="632" IsReadOnly="True"
+                   ItemsSource="{Binding Path= Emails, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False"                    
+                    SelectedItem="{Binding Path=SelectedEmail,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="From"  Width="1.5*" Binding="{Binding From}" >
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Subject" Width="2.5*" Binding="{Binding Subject}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Date" Width="*" Binding="{Binding Date, StringFormat='yyyy-MM-dd HH:mm:ss '}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="98,41,0,0" TextWrapping="Wrap" Text="{Binding Path=UserInfo.Server, Mode=TwoWay}" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Server" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
+        <Label Content="Port" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="98,69,0,0" TextWrapping="Wrap"  Text="{Binding Path=UserInfo.Port, Mode=TwoWay}" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Encryption" HorizontalAlignment="Left" Margin="323,7,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="411,10,0,0" VerticalAlignment="Top" Width="190" 
+                   ItemsSource="{Binding Path=EncryptionTypes}" 
+                  SelectedItem="{Binding Path=UserInfo.EncryptionType, Mode=TwoWay}"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="323,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="323,69,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding UserInfo.UserName, UpdateSourceTrigger=PropertyChanged}" Height="23" Margin="411,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding UserInfo.Password, UpdateSourceTrigger=PropertyChanged}" Height="23" Margin="411,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="446,104,0,0" VerticalAlignment="Top" Width="155" Height="36"
+                 Command="{Binding Path=BtnStartCommand}"
+                CommandParameter="{Binding UserInfo}"/>
+        <Label Content="Server type" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="98,10,0,0" VerticalAlignment="Top" Width="190" ItemsSource="{Binding Path=ServerTypes}" SelectedItem="{Binding Path=UserInfo.ServerType, Mode=TwoWay}"/>
+        <TextBox HorizontalAlignment="Left" Height="690" Margin="647,10,0,0" IsReadOnly="True" TextWrapping="Wrap" Text="{Binding Path=SelectedEmail.Body}" VerticalAlignment="Top" Width="632" VerticalScrollBarVisibility="Auto"/>
+
+    </Grid>
+</Window>
