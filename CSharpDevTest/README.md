@@ -1,6 +1,6 @@
 # The Objective
 
-The objective of this test is to create the back-end code for a small email application. Each requirement is there for a very specific reason, and will test your skills as a developer on Mailbird. If you have any questions before you start the test, please don't hesitate to ask. Also, you're welcome to upgrade the .NET Framework version, add any dependencies you desire or make other changes, as long as the requirements below are met.
+The objective of this test is to create the back-end code for a small email application. Each requirement is there for a very specific reason, and will test your skills as a developer on Mailbird. you can upgrade to .NET Framework version, add any dependencies you desire or make other changes, it's up to you as long as the requirements below are met.
 
 Note that the hiring decision will primarily be based on your performance on this test. The final result should show:
 
