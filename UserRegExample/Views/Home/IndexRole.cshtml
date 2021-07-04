@@ -1,0 +1,35 @@
+﻿@model IList<UserRegExample.ViewModels.CreateRoleViewModel>
+
+@{
+    ViewData["Title"] = "IndexRole";
+}
+
+<h1>IndexRole</h1>
+
+<p>
+    <a asp-action="CreateRole">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditRole", new { Id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "DeleteRole", new {  id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
