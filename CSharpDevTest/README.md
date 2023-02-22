@@ -1,14 +1,14 @@
 # The Objective
 
-The objective of this test is to create the back-end code for a small email application. Each requirement is there for a very specific reason, and will test your skills as a developer on Mailbird. you can upgrade to .NET Framework version, add any dependencies you desire or make other changes, it's up to you as long as the requirements below are met.
+The objective of this test is to create the back-end code for a small email application. Each requirement is there for a very specific reason. you can upgrade to .NET Framework version, add any dependencies you desire or make other changes, it's up to you as long as the requirements below are met.
 
-Note that the hiring decision will primarily be based on your performance on this test. The final result should show:
+The object of projeect includes:
 
-- Your ability to learn and work with the email component we use, Mail.dll.
-- Your attention to detail when reading instructions and your ability to work alone.
-- Your ability to understand the principles of MVVM and use WPF data binding.
-- Your ability to create and work with a multi threaded application.
-- Your ability to structure your code and avoid code duplication and other code smells.
+- ability to learn and work with the email component we use, Mail.dll.
+- attention to detail when reading instructions and your ability to work alone.
+- ability to understand the principles of MVVM and use WPF data binding.
+- ability to create and work with a multi threaded application.
+- ability to structure your code and avoid code duplication and other code smells.
 
 # Application Requirements
 
@@ -39,10 +39,10 @@ The following are direct links to the appropriate samples from the Mail.dll samp
 
 Note that the NuGet included evaluation version of Mail.dll changes the subject of some emails to "Please purchase a license" message and shows "Please purchase a license" dialogs.
 
-# What we look for in particular
+# Code Behaviour:
 
 - Embrace the KISS and SOLID design principles.
-- If for whatever reason you're unable to complete all of the requirements, make a note of what you didn't complete, how you would have done it, and make sure that what IS completed is working perfectly and the code is nice and clean.
+- code is nice and clean.
 - Code duplication is kept to a minimum by using inheritance and otherwise unifying code.
 - Magic strings and other code smells are kept to a minimum / is non existent. The new C# language features will help here.
 - The view (MainWindow.xaml) uses MVVM and data binding extensively/exclusively.
